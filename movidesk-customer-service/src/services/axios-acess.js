@@ -6,25 +6,26 @@ class AxiosAcess {
         this.urlAcess = "EndPoint.backend/2424/";
     }
     
-    get(endUrL) {
-        const response = await axios.get(urlAcess + endUrL);
+    async get(endUrL) {
+        const response = await axios.get(this.urlAcess + endUrL);
         return response.data;
         }
     
     
-    post(endUrL,postContent) {
-        const response = await axios.post(urlAcess + endUrL , postContent);
+    async post(endUrL,postContent) {
+        const response = await axios.post(this.urlAcess + endUrL , postContent);
         return response.data;
     }
 
-    delete(endUrL) {
-        const response = await axios.delete(urlAcess + endUrL);
+    async delete(endUrL) {
+        const response = await axios.delete(this.urlAcess + endUrL);
         return response.data;
 
     };
 
-    delete(endUrL) {
-        const response = await axios.delete(urlAcess + endUrL);
+    async  delete(endUrL) {
+        const response = await axios.delete(this.urlAcess + endUrL);
         return response.data;
     };
 }
+ export default AxiosAcess;
