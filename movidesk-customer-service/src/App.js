@@ -8,14 +8,16 @@ import NotFound from "./master-screens/not-found";
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Login} />
-        <ProtectedRoute exact path="/login" component={Login} />
-        <ProtectedRoute exact path="/app" component={Main} />
-        <Route path="*" component={NotFound} />
-      </Switch>
-    </Router>
+    <div className="container-principal">
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <ProtectedRoute exact path="/login" component={Login} />
+          <ProtectedRoute exact path="/app" component={Main} />
+          <Route path="*" component={NotFound} />
+        </Switch>
+      </Router>
+    </div>
   );
 }
 
