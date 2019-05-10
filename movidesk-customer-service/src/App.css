@@ -16,3 +16,9 @@ Login styles
 Main styles
 
 */
+.main-container,
+.main-aside-container,
+.main-section-container {
+  display: flex;
+  flex: 1;
+}

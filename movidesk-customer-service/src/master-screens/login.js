@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import Auth from "../auth";
 import "./login.css";
@@ -7,6 +7,9 @@ import logoMovidesk from "../static/logo-default-no-background.png";
 function Login() {
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
+  useEffect(() => {
+    console.log("hello my bro!");
+  }, [user]);
 
   const submitLogin = history => {
     Auth.login(user, pass, () => {

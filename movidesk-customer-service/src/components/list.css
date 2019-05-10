@@ -1,0 +1,29 @@
+.list-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.list-component {
+  list-style: none;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.default-style-list-item {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #bebebe;
+  height: 36px;
+  line-height: 36px;
+}
+
+.default-style-list-item.list-head {
+  font-weight: bold;
+}
+
+.default-style-list-item .item {
+  flex: 1;
+}
