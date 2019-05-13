@@ -2,22 +2,6 @@ import React from "react";
 import SquareIconButton from "../components/square-icon-button";
 import "./list.css";
 
-const dataFake = {
-  headers: {
-    name: "Nome",
-    industria: "Industria"
-  },
-  items: [
-    {
-      name: "cliente 1",
-      industria: "petroleira"
-    },
-    {
-      name: "cliente 2",
-      industria: "cimento"
-    }
-  ]
-};
 
 function List(props) {
   return (
@@ -33,18 +17,23 @@ function List(props) {
       </div>
       <ul className="list-component">
         <li className="default-style-list-item list-head">
-          {Object.keys(dataFake.headers).map((item, index) => (
+          {Object.keys(props.dataSource.headers).map((item, index) => {
+            debugger
+            return(
             <div key={index} className="item">
-              {dataFake.headers[item]}
+              {props.dataSource.headers[item]}
             </div>
-          ))}
+          )})}
         </li>
-        {dataFake.items.map((dataItem, index) => {
+        {props.dataSource.items.map((dataItem, index) => {
+          debugger
           return (
             <li key={index} className="default-style-list-item">
-              {Object.keys(dataItem).map((item, index) => (
-                <div className="item">{dataItem[item]}</div>
-              ))}
+              {Object.keys(dataItem).map((item, nindex) => {
+                debugger ;
+                return(
+                <div className="item">{dataItem[nindex]}</div>
+              )})}
             </li>
           );
         })}
