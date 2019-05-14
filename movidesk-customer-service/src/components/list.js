@@ -1,6 +1,7 @@
 import React from "react";
 import SquareIconButton from "../components/square-icon-button";
 import "./list.css";
+import { object } from "prop-types";
 
 
 function List(props) {
@@ -18,7 +19,6 @@ function List(props) {
       <ul className="list-component">
         <li className="default-style-list-item list-head">
           {Object.keys(props.dataSource.headers).map((item, index) => {
-            debugger
             return(
             <div key={index} className="item">
               {props.dataSource.headers[item]}
@@ -26,14 +26,12 @@ function List(props) {
           )})}
         </li>
         {props.dataSource.items.map((dataItem, index) => {
-          debugger
           return (
             <li key={index} className="default-style-list-item">
-              {Object.keys(dataItem).map((item, nindex) => {
-                debugger ;
+              {Object.values(dataItem).map((item, nindex) => Object.values(item).map((objectItem,objectIndex) =>{
                 return(
-                <div className="item">{dataItem[nindex]}</div>
-              )})}
+                <div className="item">{objectItem}</div>
+              )}))}
             </li>
           );
         })}

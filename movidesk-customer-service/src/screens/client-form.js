@@ -2,7 +2,8 @@ import React, { useState,useEffect } from "react";
 import List from "../components/list";
 import Form from "./form/form";
 import { stylex } from "../utils/flex-inline-style";
-import AxiosAcess, {gettera} from "../services/axios-acess";
+import AxiosAcess from "../services/axios-acess";
+import Axios from "axios";
 
 const decideActivateForm = (active = false) => {
   return active ? "flex" : "none";
@@ -14,8 +15,7 @@ function ClientForm() {
   
   useEffect(async () => {
     const fetchData = async () => {
-      const result = await gettera();
-      debugger
+      const result = await new AxiosAcess(1).get("Client/GetAll");
       if (!data.length)
         setData(result.data)
     }
@@ -33,7 +33,6 @@ function ClientForm() {
     });
     //Mapeia todos os itens do objeto recebido
     data.map((item, index) => {
-      debugger
       Items.push([
         {
           businessName: item.businessName,
@@ -46,8 +45,7 @@ function ClientForm() {
   const ListClientDataBind = { headers: [], items: [] };
   ListClientDataBind.headers = Headers; 
   ListClientDataBind.items = Items;
-  debugger 
-  return (
+   return (
     <div style={stylex} className="default-container">
       <div style={stylex}>
          <List dataSource={ListClientDataBind}

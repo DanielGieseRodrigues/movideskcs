@@ -9,7 +9,7 @@ class AxiosAcess {
     }
     
     get(endUrL) {
-        return axios.get('http://localhost:50178/api/Client/GetAll', this.headers );
+        return axios.get(this.urlAcess + endUrL , this.headers);
     }
     
     
@@ -30,17 +30,3 @@ class AxiosAcess {
     };
 }
  export default AxiosAcess;
-
-// export const gettera = async () => {
-//     try {
-        
-//         const res = await axios.get('http://localhost:50178/api/Client/GetAll',{ 'headers': { 'TenantId': this.TenantId } });
-//         return res.data;
-//     } catch (err) {
-//         console.error(err);
-//     }
-// }
-
-export const gettera = () => {
-    return axios.get('http://localhost:50178/api/Client/GetAll',{ 'headers': { 'TenantId': 1 } });
-}
